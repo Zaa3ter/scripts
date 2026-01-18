@@ -4,11 +4,11 @@ histfile="$HOME/.cache/cliphist"
 placeholder="<NEWLINE>"
 
 highlight() {
-	clip=$(xclip -o -selection primary | xclip -i -f -selection clipboard 2>/dev/null) 
+	clip=$(xclip -o -selection primary | xclip -i -f -selection clipboard)
 }
 
 output() {
-	clip=$(xclip -i -f -selection clipboard 2>/dev/null) 
+	clip=$(xclip -i -f -selection clipboard)
 }
 
 write() {

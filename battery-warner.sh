@@ -6,7 +6,6 @@ sendNotify() {
 		return
 	else
 		notify-send -i battery "AC Power" "Stop Charging"
-		(( blevel < 10 )) && notify-send -u critical -i battery-low "Battery Low" "Battery is at ${battery_level}%!"
 	fi
 }
 
@@ -19,6 +18,10 @@ while true; do
 		echo "status $st old $oldst"
 		oldst=$st
 		sendNotify
+	fi
+
+	if ((blevel < 15 && st == 0)); then
+		notify-send -u critical -i battery-low "Battery Low" "Battery is at ${blevel}%!"
 	fi
 	sleep 10
 done

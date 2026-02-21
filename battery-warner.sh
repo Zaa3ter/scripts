@@ -22,6 +22,7 @@ while true; do
 
 	if ((blevel < 15 && st == 0)); then
 		notify-send -u critical -i battery-low "Battery Low" "Battery is at ${blevel}%!"
+		sleep 60
 	fi
 	sleep 10
 done

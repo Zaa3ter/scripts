@@ -21,7 +21,7 @@ while true; do
 	fi
 
 	if ((blevel < 15 && st == 0)); then
-		notify-send -u critical -i battery-low "Battery Low" "Battery is at ${blevel}%!"
+		notify-send -u critical -i battery-low -t 1000 "Battery Low" "Battery is at ${blevel}%!"
 		sleep 60
 	fi
 	sleep 10

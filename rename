@@ -1,0 +1,8 @@
+#!/bin/bash
+
+char = "$1"
+with = "$2"
+
+ls -1 | while read file; do
+	echo $file | rg $char && mv "$i" $(echo "$i" | sed -E "s/$char+/$with/g") ;
+done

@@ -4,8 +4,8 @@
 #export XAUTHORITY=/run/lightdm/zaater/xauthority
 
 Logout(){
-	if [ -n "$NIRI_SOCKET" ]; then
-		niri msg action quit --skip-confirmation
+	if [ -n "$WAYLAND_DISPLAY" ]; then
+		niri msg action quit --skip-confirmation || hyprctl dispatch 'hl.dsp.exit()'
 	else
 		i3-msg exit 
 	fi
